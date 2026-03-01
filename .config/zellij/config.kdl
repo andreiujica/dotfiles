@@ -1,0 +1,13 @@
+// Consistent with the rest of the terminal colorscheme.
+// Run `zellij options --help` or see https://zellij.dev/documentation/themes for alternatives.
+theme "catppuccin-macchiato"
+
+// Suppress the tips overlay shown at the bottom on first launch.
+show_startup_tips false
+
+// Hide the session name from pane title bars.
+ui {
+    pane_frames {
+        hide_session_name true
+    }
+}
