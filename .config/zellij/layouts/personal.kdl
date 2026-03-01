@@ -1,0 +1,35 @@
+// Personal development layout with two tabs: a coding workspace with Neovim,
+// a scratch terminal, and Claude Code, plus an observability tab with btop.
+// Load with `zellij --layout personal`.
+layout {
+    // Shared template applied to every tab: renders the tab-bar at the top
+    // and the status-bar at the bottom, with tab content in between (children).
+    default_tab_template {
+        pane size=1 borderless=true {
+          plugin location="zellij:tab-bar"
+        }
+        children
+        pane size=1 borderless=true {
+          plugin location="zellij:status-bar"
+        }
+    }
+
+    // Primary coding tab, focused on startup.
+    tab name="Development" focus=true {
+        pane split_direction="vertical" {
+            pane size="60%" split_direction="horizontal" {
+                pane name="Neovim"  size="75%" focus=true command="nvim" start_suspended=false
+                pane name="Scratch" size="25%"
+            }
+            pane name="Claude Code" size="40%" command="/Users/andreiujica/.local/bin/claude" start_suspended=false
+        }
+    }
+
+    // Secondary tab for monitoring the system while coding.
+    tab name="Observability" {
+        pane split_direction="vertical" {
+            pane name="Logs"      size="50%"
+            pane name="Resources" size="50%" command="btop" start_suspended=false
+        }
+    }
+}
