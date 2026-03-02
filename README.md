@@ -2,7 +2,7 @@
 
 [![Last Commit](https://img.shields.io/github/last-commit/andreiujica/dotfiles?style=flat-square&color=cba6f7)](https://github.com/andreiujica/dotfiles/commits/main)
 [![Platform](https://img.shields.io/badge/platform-macOS-informational?style=flat-square&color=89b4fa)](https://www.apple.com/macos/)
-[![Managed with Stow](https://img.shields.io/badge/managed%20with-stow-a6e3a1?style=flat-square)](https://www.gnu.org/software/stow/)
+[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-f38ba8?style=flat-square)](https://unlicense.org)
 
 Personal macOS configuration managed with [GNU Stow](https://www.gnu.org/software/stow/).
 
