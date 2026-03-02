@@ -6,6 +6,9 @@
 
 Personal macOS configuration managed with [GNU Stow](https://www.gnu.org/software/stow/).
 
+<img width="1470" height="919" alt="Screenshot 2026-03-02 at 14 54 05" src="https://github.com/user-attachments/assets/4a030cc6-489c-4c4f-8227-5362de74698f" />
+
+
 ## Prerequisites
 
 - macOS (Apple Silicon)
