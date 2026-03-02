@@ -1,0 +1,15 @@
+[user]
+	name = Andrei Ujica
+	email = andrei.uji22@gmail.com
+
+[init]
+	defaultBranch = main
+
+[push]
+	autoSetupRemote = true
+
+[fetch]
+	prune = true
+
+[alias]
+	undo = reset --soft HEAD~1
