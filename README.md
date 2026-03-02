@@ -6,18 +6,6 @@
 
 Personal macOS configuration managed with [GNU Stow](https://www.gnu.org/software/stow/).
 
-## What's included
-
-| Config | Tool |
-|--------|------|
-| `.zshrc` | Zsh — shell with autosuggestions, syntax highlighting, and Starship prompt |
-| `.gitconfig` | Git — sane defaults (histogram diff, zdiff3 merges, auto remote push) |
-| `.config/nvim/` | Neovim — [LazyVim](https://lazyvim.org) distribution, Catppuccin Mocha theme |
-| `.config/zellij/` | Zellij — terminal multiplexer with a personal layout |
-| `.config/ghostty/` | Ghostty — terminal emulator, JetBrains Mono, Catppuccin Mocha |
-| `.config/bat/` | bat — `cat` replacement with syntax highlighting |
-| `.config/btop/` | btop — system resource monitor, Catppuccin Mocha theme |
-
 ## Prerequisites
 
 - macOS (Apple Silicon)
@@ -36,7 +24,10 @@ git clone https://github.com/andreiujica/dotfiles.git ~/dotfiles
 ~/dotfiles/install.sh
 ```
 
-This will install Homebrew if it isn't already present, then install all dependencies via the Brewfile (Ghostty, Arc, Docker Desktop, Neovim, Zellij, Starship, lazygit, fzf, ripgrep, bat, btop, fd, uv, stylua, zsh plugins, stow), then symlink every config into `~` with stow.
+This will install Homebrew if it isn't already present, then install all
+dependencies via the Brewfile (Ghostty, Arc, Docker Desktop, Neovim, Zellij,
+Starship, lazygit, fzf, ripgrep, bat, btop, fd, uv, stylua, zsh plugins, stow),
+then symlink every config into `~` with stow.
 
 To skip GUI app installs (casks) and only install CLI tools:
 
@@ -45,7 +36,8 @@ To skip GUI app installs (casks) and only install CLI tools:
 ```
 
 > [!WARNING]
-> If any target files already exist (e.g. a pre-existing `~/.zshrc`), stow will refuse to overwrite them. Back up or remove conflicts before running.
+> If any target files already exist (e.g. a pre-existing `~/.zshrc`), stow will
+> refuse to overwrite them. Back up or remove conflicts before running.
 
 **3. Restart your shell.**
 
@@ -55,9 +47,10 @@ exec zsh
 
 ## How stow works
 
-Stow treats `~/dotfiles` as a "package" whose contents should be mirrored into the target directory (`~`). The command above is equivalent to manually running:
+Stow treats `~/dotfiles` as a "package" whose contents should be mirrored into
+the target directory (`~`). The command above is equivalent to manually running:
 
-```
+```sh
 ln -s ~/dotfiles/.zshrc ~/.zshrc
 ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/dotfiles/.config/nvim ~/.config/nvim
