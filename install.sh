@@ -31,4 +31,7 @@ fi
 step "Symlinking dotfiles"
 cd "$(dirname "$0")" && stow .
 
+step "Building bat theme cache"
+bat cache --build
+
 done_ "All done. Restart your shell with: exec zsh"

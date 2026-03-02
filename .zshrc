@@ -1,6 +1,9 @@
 # Homebrew - must be set up before anything else
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# XDG Base Directory - makes XDG-aware tools use ~/.config consistently
+export XDG_CONFIG_HOME="$HOME/.config"
+
 # Preferred editor for git, cron, and other tools that open an editor
 export EDITOR=nvim
 export VISUAL=nvim
