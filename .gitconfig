@@ -2,6 +2,15 @@
 	name = Andrei Ujica
 	email = andrei.uji22@gmail.com
 
+[core]
+	editor = nvim
+
+[diff]
+	algorithm = histogram
+
+[merge]
+	conflictstyle = zdiff3
+
 [init]
 	defaultBranch = main
 
