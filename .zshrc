@@ -1,3 +1,6 @@
+# Homebrew - must be set up before anything else
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Preferred editor for git, cron, and other tools that open an editor
 export EDITOR=nvim
 export VISUAL=nvim
