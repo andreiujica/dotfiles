@@ -21,7 +21,6 @@ Personal macOS configuration managed with [GNU Stow](https://www.gnu.org/softwar
 ## Prerequisites
 
 - macOS (Apple Silicon)
-- [Homebrew](https://brew.sh)
 
 ## Installation
 
@@ -31,26 +30,24 @@ Personal macOS configuration managed with [GNU Stow](https://www.gnu.org/softwar
 git clone https://github.com/andreiujica/dotfiles.git ~/dotfiles
 ```
 
-**2. Install all dependencies from the Brewfile.**
+**2. Run the bootstrap script.**
 
 ```sh
-brew bundle --file=~/dotfiles/Brewfile
+~/dotfiles/install.sh
 ```
 
-This installs Ghostty, Arc, Docker Desktop, Neovim, Zellij, Starship, lazygit, fzf, ripgrep, bat, btop, fd, uv, stylua, zsh plugins, and stow itself.
+This will install Homebrew if it isn't already present, then install all dependencies via the Brewfile (Ghostty, Arc, Docker Desktop, Neovim, Zellij, Starship, lazygit, fzf, ripgrep, bat, btop, fd, uv, stylua, zsh plugins, stow), then symlink every config into `~` with stow.
 
-**3. Symlink everything with stow.**
+To skip GUI app installs (casks) and only install CLI tools:
 
 ```sh
-cd ~/dotfiles && stow .
+~/dotfiles/install.sh --no-casks
 ```
-
-Stow will create symlinks in `~` for every file and directory in `~/dotfiles`, preserving the directory structure. For example, `~/dotfiles/.config/nvim` becomes `~/.config/nvim` via symlink — no copying, just pointers.
 
 > [!WARNING]
-> If any of the target files already exist (e.g. a pre-existing `~/.zshrc`), stow will refuse to overwrite them. Back up or remove any conflicting files first.
+> If any target files already exist (e.g. a pre-existing `~/.zshrc`), stow will refuse to overwrite them. Back up or remove conflicts before running.
 
-**4. Restart your shell.**
+**3. Restart your shell.**
 
 ```sh
 exec zsh
