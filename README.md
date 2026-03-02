@@ -62,3 +62,20 @@ To remove the symlinks later:
 ```sh
 cd ~ && stow -D -t ~ dotfiles
 ```
+
+## Adding a new config
+
+Mirror the path you want the symlink to appear at. For example, to track `~/.config/starship.toml`:
+
+```sh
+cp ~/.config/starship.toml ~/dotfiles/.config/starship.toml
+rm ~/.config/starship.toml
+cd ~/dotfiles && stow .
+```
+
+> [!WARNING]
+> The `rm` is required — stow will refuse to create a symlink if a real file
+> already exists at the target path. Always delete the original before running `stow`.
+
+Stow re-runs safely on an already-linked tree — existing symlinks are left
+untouched and only new ones are created.
