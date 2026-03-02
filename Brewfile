@@ -1,4 +1,5 @@
 cask "arc"
+cask "font-jetbrains-mono"
 cask "ghostty"
 cask "claude-code"
 cask "docker-desktop"
